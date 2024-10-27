@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog {
+  border: none;
+  padding: 0;
+}
+
+dialog:focus {
+  outline: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1cm;
+  }
+
+  body {
+    font-size: 9pt;
+    line-height: 1.2;
+    background: white;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .space-y-8 > * {
+    display: none !important;
+  }
+
+  .mortgage-report {
+    display: block !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-schedule {
+    margin-top: 0.5cm;
+    page-break-before: auto;
+  }
+
+  .print-schedule table {
+    font-size: 8pt;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .print-schedule th,
+  .print-schedule td {
+    border: 0.5pt solid #ddd;
+    padding: 0.1cm 0.2cm;
+    text-align: left;
+  }
+
+  .print-schedule th {
+    background-color: #f8f9fa !important;
+    font-weight: bold;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+
+  h1 {
+    font-size: 16pt !important;
+    margin-bottom: 0.3cm !important;
+  }
+
+  h2 {
+    font-size: 12pt !important;
+    margin-bottom: 0.2cm !important;
+  }
+
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 0.2cm !important;
+  }
+
+  .event-item {
+    border: 0.5pt solid #ddd;
+    padding: 0.15cm;
+    margin-bottom: 0.15cm;
+  }
+
+  .print-chart {
+    width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-chart text {
+    font-family: system-ui, -apple-system, sans-serif !important;
+  }
+}
