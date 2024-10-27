@@ -3,6 +3,7 @@ import type { PaymentSchedule, MortgageEvent } from '../types/mortgage';
 import PrintPaymentChart from './PrintPaymentChart';
 import { useLanguage } from '../contexts/LanguageContext';
 import { formatCurrency } from '../utils/formatCurrency';
+import qrcodeImage from './qrcode.png';  // 导入 qrcode 图片
 
 interface PrintLayoutProps {
   loanAmount: number;
@@ -64,6 +65,10 @@ const PrintLayout: React.FC<PrintLayoutProps> = ({
         <div className="text-sm text-gray-600 text-right">
           <p className="mb-1">{t.report.id}: {reportId}</p>
           <p>{t.report.generated}: {printTime}</p>
+          <div className="flex justify-end">  {/* 添加这个容器来右对齐图片 */}
+            <img src={qrcodeImage} alt="QR Code" className="w-24 h-24 mt-2" />
+          </div>
+          <p className="mt-1 text-xs">{t.report.scanQRCode}</p>
         </div>
       </div>
 
