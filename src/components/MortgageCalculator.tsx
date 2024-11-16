@@ -25,6 +25,7 @@ export const MortgageCalculator: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const [isUpgradeOpen, setIsUpgradeOpen] = useState(false);
+  const [isPremium, setIsPremium] = useState<boolean>(false);
 
   const schedule = useMemo(() => {
     return calculateMortgageSchedule(loanAmount, interestRate, loanTerm, events, loanType);
@@ -176,8 +177,9 @@ export const MortgageCalculator: React.FC = () => {
         <div className="hidden sm:flex items-center gap-4 print:hidden">
           <button
             onClick={handleGeneratePDF}
-            disabled={isGeneratingPDF}
+            disabled={isGeneratingPDF || !isPremium}
             className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            title={!isPremium ? t.upgrade.requiredFeature : ''}
           >
             <FileDown className="w-4 h-4" />
             {t.actions.generatePDF}
@@ -185,7 +187,9 @@ export const MortgageCalculator: React.FC = () => {
           </button>
           <button
             onClick={handlePrint}
-            className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            disabled={!isPremium}
+            className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            title={!isPremium ? t.upgrade.requiredFeature : ''}
           >
             <Printer className="w-4 h-4" />
             {t.actions.printReport}
@@ -224,8 +228,9 @@ export const MortgageCalculator: React.FC = () => {
               <div className="p-4 space-y-4">
                 <button
                   onClick={handleGeneratePDF}
-                  disabled={isGeneratingPDF}
+                  disabled={isGeneratingPDF || !isPremium}
                   className="w-full flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  title={!isPremium ? t.upgrade.requiredFeature : ''}
                 >
                   <FileDown className="w-4 h-4" />
                   {t.actions.generatePDF}
@@ -236,7 +241,9 @@ export const MortgageCalculator: React.FC = () => {
                     handlePrint();
                     setIsMenuOpen(false);
                   }}
-                  className="w-full flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                  disabled={!isPremium}
+                  className="w-full flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  title={!isPremium ? t.upgrade.requiredFeature : ''}
                 >
                   <Printer className="w-4 h-4" />
                   {t.actions.printReport}
