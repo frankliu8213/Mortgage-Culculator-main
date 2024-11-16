@@ -81,6 +81,7 @@ const en: Translation = {
   actions: {
     generatePDF: "Generate PDF",
     printReport: "Print Report",
+    upgrade: "Upgrade to Pro",
     help: "Help",
     close: "Close"
   },
@@ -173,6 +174,7 @@ const es: Translation = {
   actions: {
     generatePDF: "Generar PDF",
     printReport: "Imprimir Informe",
+    upgrade: "Actualizar a Pro",
     help: "Ayuda",
     close: "Cerrar"
   },
@@ -265,6 +267,7 @@ const fr: Translation = {
   actions: {
     generatePDF: "Générer PDF",
     printReport: "Imprimer Rapport",
+    upgrade: "Passer à Pro",
     help: "Aide",
     close: "Fermer"
   },
@@ -357,6 +360,7 @@ const ja: Translation = {
   actions: {
     generatePDF: "PDF生成",
     printReport: "帳票印刷",
+    upgrade: "プロ版にアップグレード",
     help: "ヘルプ",
     close: "閉じる"
   },
@@ -449,6 +453,7 @@ const ko: Translation = {
   actions: {
     generatePDF: "PDF 생성",
     printReport: "보고서 인쇄",
+    upgrade: "프로 버전으로 업그레이드",
     help: "도움말",
     close: "닫기"
   },
@@ -541,6 +546,7 @@ const zh: Translation = {
   actions: {
     generatePDF: "生成PDF",
     printReport: "打印报告",
+    upgrade: "升级至专业版",
     help: "帮助",
     close: "关闭"
   },

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Home, HelpCircle, Printer, FileDown, Menu } from 'lucide-react';
+import { Home, HelpCircle, Printer, FileDown, Menu, Crown } from 'lucide-react';
 import html2pdf from 'html2pdf.js';
 import InputSection from './InputSection';
 import EventsSection from './EventsSection';
@@ -179,6 +179,7 @@ export const MortgageCalculator: React.FC = () => {
           >
             <FileDown className="w-4 h-4" />
             {t.actions.generatePDF}
+            <Crown className="w-4 h-4 text-yellow-300" />
           </button>
           <button
             onClick={handlePrint}
@@ -186,6 +187,14 @@ export const MortgageCalculator: React.FC = () => {
           >
             <Printer className="w-4 h-4" />
             {t.actions.printReport}
+            <Crown className="w-4 h-4 text-yellow-300" />
+          </button>
+          <button
+            onClick={() => window.open('https://pro-upgrade-url.com', '_blank')}
+            className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+          >
+            <Crown className="w-4 h-4" />
+            {t.actions.upgrade}
           </button>
           <button
             onClick={() => setIsHelpOpen(true)}
@@ -218,6 +227,7 @@ export const MortgageCalculator: React.FC = () => {
                 >
                   <FileDown className="w-4 h-4" />
                   {t.actions.generatePDF}
+                  <Crown className="w-4 h-4 text-yellow-300" />
                 </button>
                 <button
                   onClick={() => {
@@ -228,6 +238,17 @@ export const MortgageCalculator: React.FC = () => {
                 >
                   <Printer className="w-4 h-4" />
                   {t.actions.printReport}
+                  <Crown className="w-4 h-4 text-yellow-300" />
+                </button>
+                <button
+                  onClick={() => {
+                    window.open('https://pro-upgrade-url.com', '_blank');
+                    setIsMenuOpen(false);
+                  }}
+                  className="w-full flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                >
+                  <Crown className="w-4 h-4" />
+                  {t.actions.upgrade}
                 </button>
                 <button
                   onClick={() => {
