@@ -9,6 +9,7 @@ import ResultsSection from './ResultsSection';
 import LanguageSelector from './LanguageSelector';
 import HelpDialog from './HelpDialog';
 import PrintLayout from './PrintLayout';
+import UpgradeDialog from './UpgradeDialog';
 import { useLanguage } from '../contexts/LanguageContext';
 import { calculateMortgageSchedule } from '../utils/mortgageCalculations';
 import type { MortgageEvent } from '../types/mortgage';
@@ -23,6 +24,7 @@ export const MortgageCalculator: React.FC = () => {
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const [isUpgradeOpen, setIsUpgradeOpen] = useState(false);
 
   const schedule = useMemo(() => {
     return calculateMortgageSchedule(loanAmount, interestRate, loanTerm, events, loanType);
@@ -190,7 +192,7 @@ export const MortgageCalculator: React.FC = () => {
             <Crown className="w-4 h-4 text-yellow-300" />
           </button>
           <button
-            onClick={() => window.open('https://pro-upgrade-url.com', '_blank')}
+            onClick={() => setIsUpgradeOpen(true)}
             className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
           >
             <Crown className="w-4 h-4" />
@@ -242,7 +244,7 @@ export const MortgageCalculator: React.FC = () => {
                 </button>
                 <button
                   onClick={() => {
-                    window.open('https://pro-upgrade-url.com', '_blank');
+                    setIsUpgradeOpen(true);
                     setIsMenuOpen(false);
                   }}
                   className="w-full flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
@@ -328,6 +330,7 @@ export const MortgageCalculator: React.FC = () => {
       </div>
 
       <HelpDialog isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+      <UpgradeDialog isOpen={isUpgradeOpen} onClose={() => setIsUpgradeOpen(false)} />
     </div>
   );
 };

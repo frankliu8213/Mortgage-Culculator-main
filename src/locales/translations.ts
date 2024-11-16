@@ -90,6 +90,22 @@ const en: Translation = {
     generated: "Generated",
     property: "Property",
     disclaimer: "This report is for reference only. Please refer to the bank's actual approval for specific repayment information."
+  },
+  upgrade: {
+    title: "Upgrade to Pro",
+    features: "Pro Features",
+    featureList: {
+      customInterestRates: "Custom interest rates for different periods",
+      unlimitedEvents: "Unlimited mortgage events",
+      advancedCharts: "Advanced analytics and charts",
+      exportFormats: "Export to multiple formats"
+    },
+    pricing: {
+      amount: "$9.99",
+      period: "/month",
+      cancelAnytime: "Cancel anytime"
+    },
+    ctaButton: "Upgrade Now"
   }
 };
 
@@ -183,6 +199,22 @@ const es: Translation = {
     generated: "Generado",
     property: "Propiedad",
     disclaimer: "Este informe es solo para referencia. Consulte la aprobación real del banco para obtener información específica sobre el reembolso."
+  },
+  upgrade: {
+    title: "Actualizar a Pro",
+    features: "Características Pro",
+    featureList: {
+      customInterestRates: "Tasas de interés personalizadas para diferentes períodos",
+      unlimitedEvents: "Eventos hipotecarios ilimitados",
+      advancedCharts: "Análisis y gráficos avanzados",
+      exportFormats: "Exportar a múltiples formatos"
+    },
+    pricing: {
+      amount: "$9.99",
+      period: "/mes",
+      cancelAnytime: "Cancela cuando quieras"
+    },
+    ctaButton: "Actualizar Ahora"
   }
 };
 
@@ -276,6 +308,22 @@ const fr: Translation = {
     generated: "Généré",
     property: "Propriété",
     disclaimer: "Ce rapport est fourni à titre indicatif uniquement. Veuillez vous référer à l'approbation réelle de la banque pour les informations spécifiques de remboursement."
+  },
+  upgrade: {
+    title: "Passer à Pro",
+    features: "Fonctionnalités Pro",
+    featureList: {
+      customInterestRates: "Taux d'intérêt personnalisés pour différentes périodes",
+      unlimitedEvents: "Événements hypothécaires illimités",
+      advancedCharts: "Analyses et graphiques avancés",
+      exportFormats: "Exportation vers plusieurs formats"
+    },
+    pricing: {
+      amount: "9,99 €",
+      period: "/mois",
+      cancelAnytime: "Annulez à tout moment"
+    },
+    ctaButton: "Mettre à Niveau"
   }
 };
 
@@ -369,6 +417,22 @@ const ja: Translation = {
     generated: "作成日時",
     property: "物件",
     disclaimer: "このレポートは参考用です。具体的な返済情報については、銀行の実際の承認内容をご確認ください。"
+  },
+  upgrade: {
+    title: "プロ版にアップグレード",
+    features: "プロ版の機能",
+    featureList: {
+      customInterestRates: "期間ごとのカスタム金利設定",
+      unlimitedEvents: "無制限の返済イベント",
+      advancedCharts: "高度な分析とグラフ",
+      exportFormats: "複数形式でのエクスポート"
+    },
+    pricing: {
+      amount: "¥990",
+      period: "/月",
+      cancelAnytime: "いつでもキャンセル可能"
+    },
+    ctaButton: "今すぐアップグレード"
   }
 };
 
@@ -462,6 +526,22 @@ const ko: Translation = {
     generated: "생성일시",
     property: "물건",
     disclaimer: "이 보고서는 참고용입니다. 구체적인 상환 정보는 은행의 실제 승인 내용을 확인하시기 바랍니다."
+  },
+  upgrade: {
+    title: "프로 버전으로 업그레이드",
+    features: "프로 기능",
+    featureList: {
+      customInterestRates: "기간별 맞춤 이자율",
+      unlimitedEvents: "무제한 상환 이벤트",
+      advancedCharts: "고급 분석 및 차트",
+      exportFormats: "다양한 형식으로 내보내기"
+    },
+    pricing: {
+      amount: "₩9,900",
+      period: "/월",
+      cancelAnytime: "언제든지 취소 가능"
+    },
+    ctaButton: "지금 업그레이드"
   }
 };
 
@@ -555,6 +635,22 @@ const zh: Translation = {
     generated: "生成时间",
     property: "物业",
     disclaimer: "本报告仅供参考。具体还款信息请以银行实际批复为准。"
+  },
+  upgrade: {
+    title: "升级至专业版",
+    features: "专业版功能",
+    featureList: {
+      customInterestRates: "自定义不同期限的利率",
+      unlimitedEvents: "无限还款事件",
+      advancedCharts: "高级分析和图表",
+      exportFormats: "多格式导出"
+    },
+    pricing: {
+      amount: "¥69",
+      period: "/月",
+      cancelAnytime: "随时可取消"
+    },
+    ctaButton: "立即升级"
   }
 };
 
