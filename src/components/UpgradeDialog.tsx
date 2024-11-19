@@ -50,12 +50,6 @@ const UpgradeDialog: React.FC<UpgradeDialogProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="space-y-6">
-              <div className="text-center">
-                <p className="text-sm text-gray-500 mt-2">
-                  {t.upgrade.pricing.cancelAnytime}
-                </p>
-              </div>
-              
               <stripe-buy-button
                 buy-button-id="buy_btn_1QLVX8K1ceZmaWi8gtUr3OTC"
                 publishable-key="pk_test_51QLSpCK1ceZmaWi87TU5MF4AY1On8XHCfMu4udajp8KCP5mawyqSo0hg7v9kCZ7uMMIYfliQfB4xQhjiECdknQSa00oiESLAOL"
