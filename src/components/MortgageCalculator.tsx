@@ -166,6 +166,10 @@ export const MortgageCalculator: React.FC = () => {
     }
   };
 
+  const handleTestPremium = () => {
+    setIsPremium(!isPremium);
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-2">
@@ -175,6 +179,12 @@ export const MortgageCalculator: React.FC = () => {
         </div>
 
         <div className="hidden sm:flex items-center gap-4 print:hidden">
+          <button
+            onClick={handleTestPremium}
+            className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+          >
+            {isPremium ? 'Disable Premium' : 'Enable Premium'}
+          </button>
           <button
             onClick={handleGeneratePDF}
             disabled={isGeneratingPDF || !isPremium}
@@ -226,6 +236,15 @@ export const MortgageCalculator: React.FC = () => {
           <div className="sm:hidden fixed inset-0 z-50 bg-black bg-opacity-50 print:hidden">
             <div className="absolute right-0 top-0 h-full w-64 bg-white shadow-lg">
               <div className="p-4 space-y-4">
+                <button
+                  onClick={() => {
+                    handleTestPremium();
+                    setIsMenuOpen(false);
+                  }}
+                  className="w-full flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                >
+                  {isPremium ? 'Disable Premium' : 'Enable Premium'}
+                </button>
                 <button
                   onClick={handleGeneratePDF}
                   disabled={isGeneratingPDF || !isPremium}
