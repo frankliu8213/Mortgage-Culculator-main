@@ -25,7 +25,10 @@ export const MortgageCalculator: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const [isUpgradeOpen, setIsUpgradeOpen] = useState(false);
-  const [isPremium, setIsPremium] = useState<boolean>(false);
+  const [isPremium, setIsPremium] = useState<boolean>(() => {
+    const stored = localStorage.getItem('isPremium');
+    return stored ? JSON.parse(stored) : false;
+  });
 
   const schedule = useMemo(() => {
     return calculateMortgageSchedule(loanAmount, interestRate, loanTerm, events, loanType);
@@ -167,7 +170,11 @@ export const MortgageCalculator: React.FC = () => {
   };
 
   const handleTestPremium = () => {
-    setIsPremium(!isPremium);
+    setIsPremium(prev => {
+      const newValue = !prev;
+      localStorage.setItem('isPremium', JSON.stringify(newValue));
+      return newValue;
+    });
   };
 
   return (
